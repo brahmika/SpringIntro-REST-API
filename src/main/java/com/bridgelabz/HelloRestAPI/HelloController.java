@@ -1,6 +1,7 @@
 package com.bridgelabz.HelloRestAPI;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,12 @@ public class HelloController {
     // UC2 - GET with Query Parameter
     @GetMapping("/hello/query")
     public String helloQuery(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
+
+    // UC3 - GET with Path Variable
+    @GetMapping("/hello/param/{name}")
+    public String helloParam(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
     }
 }
